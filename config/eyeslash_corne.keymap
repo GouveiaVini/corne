@@ -4,8 +4,10 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
-
 #include <input/processors.dtsi>
+
+#undef RC
+#define RC(row, col) ((row << 8) | col)
 
 / {
     chosen {
