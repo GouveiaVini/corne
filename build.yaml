@@ -16,26 +16,25 @@
 #    shield: eyeslash_corne_peripheral_right nice_view_custom
 #  - board: nice_nano_v2
 #    shield: settings_reset
-
 include:
-  # DONGLE (Central com Display)
+  # DONGLE (Usamos o shield do Eyeslash porque ele tem a lógica do Dongle+Tela)
   - board: nice_nano_v2
-    shield: corne_central_dongle dongle_display
+    shield: eyeslash_corne_central_dongle dongle_display
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=n -DCONFIG_ZMK_STUDIO_LOCKING=n
-    artifact-name: corne_dongle_oled
+    artifact-name: dongle_oled
 
-  # LADO ESQUERDO
+  # LADO ESQUERDO (Aqui usamos o CORNE PADRÃO de 6 colunas)
   - board: nice_nano_v2
     shield: corne_left
-    artifact-name: corne_left
+    artifact-name: left_6col
 
-  # LADO DIREITO
+  # LADO DIREITO (Aqui usamos o CORNE PADRÃO de 6 colunas)
   - board: nice_nano_v2
     shield: corne_right
-    artifact-name: corne_right
+    artifact-name: right_6col
 
-  # RESET (Essencial para limpar a bagunça do eyeslash)
+  # RESET
   - board: nice_nano_v2
     shield: settings_reset
     artifact-name: settings_reset
